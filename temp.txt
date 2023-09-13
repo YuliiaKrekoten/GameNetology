@@ -1,0 +1,5 @@
+Создана папка Games c директориями  src, res, savegames, temp
+В каталоге src создано две директории: main, test
+В каталог res создано три директории: drawables, vectors, icons
+В подкаталоге main создайно два файла: Main.java, Utils.java
+В директории temp создан файл temp.txt
