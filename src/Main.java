@@ -64,20 +64,32 @@ public class Main {
         GameProgress twoPlayer = new GameProgress(80, 3, 8, 40.7);
         GameProgress threePlayer = new GameProgress(70, 12, 7, 35.5);
 
-        GameProgress.saveGame("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat",onePlayer);
-        GameProgress.saveGame("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat1",twoPlayer);
-        GameProgress.saveGame("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat2",threePlayer);
+        GameProgress.saveGame("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat", onePlayer);
+        GameProgress.saveGame("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat1", twoPlayer);
+        GameProgress.saveGame("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat2", threePlayer);
 
-       GameProgress.zipFile("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.zip",
-               List.of("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat",
-                       "C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat1",
-                       "C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat2"));
+        GameProgress.zipFile("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.zip",
+                List.of("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat",
+                        "C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat1",
+                        "C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.dat2"));
 
+
+        File zipFile = new File("C:/Users/Admin/IdeaProjects/GameNetology/Games/saveGames/saveGame.zip");
+        File folder = new File("C:/Users/Admin/IdeaProjects/GameNetology/Games");
+        File[] zipFilesList = folder.listFiles();
+
+        if (files != null) {
+            for (File zipFileList : zipFilesList) {
+                if (!zipFileList.equals(zipFile)) {
+                    zipFileList.delete();
+                }
+            }
+        }
 
 
     }
 
 
-    }
+}
 
 
